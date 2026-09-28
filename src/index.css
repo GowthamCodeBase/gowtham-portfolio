@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@plugin "tailwindcss-noise";
+
+@theme {
+    /* COLORS */
+    --color-base-100: oklch(14% 0.004 49.25);
+    --color-base-200: oklch(21% 0.006 56.043);
+    --color-base-300: oklch(26% 0.007 34.298);
+    --color-base-400: oklch(37% 0.01 67.558);
+    --color-base-500: oklch(44% 0.011 73.639);
+    --color-base-600: oklch(55% 0.013 58.071);
+    --color-base-700: oklch(70% 0.01 56.259);
+    --color-base-800: oklch(86% 0.005 56.366);
+    --color-base-900: oklch(98% 0.001 106.423);
+
+    /* FONTS */
+    --font-grunge: "Road Rage", cursive, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+
+    /* TEXT SIZES */
+    --text-216: 13.5rem;
+    --text-128: 8rem;
+    --text-96: 6rem;
+    --text-80: 5rem;
+    --text-64: 4rem;
+    --text-48: 3rem;
+    --text-40: 2.5rem;
+    --text-32: 2rem;
+    --text-24: 1.5rem;
+    --text-20: 1.25rem;
+    --text-16: 1rem;
+    --text-12: 0.75rem;
+
+    /* ANIMATIONS */
+    --animate-spin: spin 5s linear infinite;
+    @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+    }
+
+    /* BREAKPOINTS */
+    --breakpoint-xsm: 320px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1200px;
+    --breakpoint-xl: 1440px;
+}
+
+/* Explicit font-family utility classes */
+.font-grunge {
+  font-family: "Road Rage", cursive, sans-serif !important;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+/* Base resets & styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #f7f7f7;
+  font-family: "JetBrains Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #181818;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Noise overlay fallback */
+.grunge-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+}
